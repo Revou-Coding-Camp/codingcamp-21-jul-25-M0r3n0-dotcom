@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Todo List</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Todo List</h1>
+
+    <!-- Form Input -->
+    <div class="form-group">
+      <input type="text" id="todo-input" placeholder="Add a todo..." required />
+      <input type="date" id="todo-date" required />
+      <button id="add-btn">+</button>
+    </div>
+
+    <!-- Notifikasi elegan -->
+    <div id="notification" class="notification hidden"></div>
+
+    <!-- Filter + Delete All -->
+    <div class="controls">
+      <div class="filter-wrapper">
+        <button id="filter-btn">FILTER</button>
+        <div id="filter-menu" class="filter-menu hidden">
+          <div data-value="all">All</div>
+          <div data-value="progress">On Progress</div>
+          <div data-value="finished">Finished</div>
+        </div>
+      </div>
+      <button id="delete-all-btn">DELETE ALL</button>
+    </div>
+
+    <!-- Tabel Todo -->
+    <table>
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Due Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="todo-list">
+        <tr><td colspan="4" class="empty">No task found</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Modal Konfirmasi Delete All -->
+    <div id="modal-overlay" class="modal-overlay hidden">
+      <div class="modal-box">
+        <p>Are you sure you want to delete all tasks?</p>
+        <div class="modal-actions">
+          <button id="confirm-delete">Yes, delete all</button>
+          <button id="cancel-delete">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="js/script.js"></script>
+</body>
+</html>

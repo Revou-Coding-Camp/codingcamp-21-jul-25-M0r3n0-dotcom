@@ -1,0 +1,263 @@
+/* Reset & Layout */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #0f172a;
+  color: #f1f5f9;
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+.container {
+  background-color: #1e293b;
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 700px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Heading */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #e2e8f0;
+}
+
+/* Input Form */
+.form-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"] {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #334155;
+  color: white;
+}
+
+.form-group button {
+  background-color: #6366f1;
+  border: none;
+  padding: 0 16px;
+  color: white;
+  font-size: 18px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.form-group button:hover {
+  background-color: #818cf8;
+}
+
+/* Notification */
+.notification {
+  background-color: #ef4444;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  margin: 10px 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Controls (Filter & Delete All) */
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 0;
+}
+
+#delete-all-btn,
+#filter-btn {
+  background-color: #6366f1;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#delete-all-btn:hover,
+#filter-btn:hover {
+  background-color: #818cf8;
+}
+
+.filter-wrapper {
+  position: relative;
+}
+
+/* Dropdown Menu */
+.filter-menu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  padding: 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.filter-menu div {
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.filter-menu div:hover,
+.filter-menu div:focus,
+.filter-menu div.active {
+  background-color: #475569;
+  outline: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #334155;
+}
+
+th {
+  color: #94a3b8;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+td {
+  color: #e2e8f0;
+}
+
+.empty {
+  text-align: center;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* Status */
+.status {
+  padding: 4px 10px;
+  border-radius: 6px;
+  background-color: #facc15;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.status.finished {
+  background-color: #22c55e;
+  color: white;
+}
+
+/* Buttons in table */
+.check-btn {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  margin-right: 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.check-btn:disabled {
+  background-color: #6ee7b7;
+  cursor: not-allowed;
+}
+
+.delete-btn {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.modal-box {
+  background-color: #1e293b;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 300px;
+}
+
+.modal-box p {
+  margin-bottom: 20px;
+  color: white;
+  font-size: 16px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.modal-actions button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#confirm-delete {
+  background-color: #ef4444;
+  color: white;
+}
+
+#cancel-delete {
+  background-color: #334155;
+  color: white;
+}
