@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       const deleteBtn = document.createElement('button');
-      deleteBtn.textContent = 'Delete';
+      deleteBtn.textContent = 'X';
       deleteBtn.className = 'delete-btn';
       deleteBtn.onclick = () => {
         todos.splice(index, 1);
